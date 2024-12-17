@@ -66,8 +66,7 @@ To set up the project locally, follow these steps:
    ```
 4. Make sure the Back end API running (booking-event-server)
 
-5. Start the app:                   
-
-  ```bash
-  npm install
-  ```
+5. Start the app:
+   ```bash
+   npm start
+   ```                   
