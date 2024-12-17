@@ -64,11 +64,10 @@ To set up the project locally, follow these steps:
    ```bash
    npm install
    ```
+4. Make sure the Back end API running (booking-event-server)
 
-   4. Make sure the Back end API running (booking-event-server)
+5. Start the app:                   
 
-   5. Start the app:                   
-
-```bash
-npm install
-```
+  ```bash
+  npm install
+  ```
