@@ -41,7 +41,7 @@ The Event Booking System is a web application designed to facilitate event sched
   ![](assets/img/README/2024-12-17-21-03-03-image.png)
 - **Mobile**
   
-  ![](assets/img/README/2024-12-17-21-03-35-image.png)![](assets/img/README/2024-12-17-21-03-58-image.png)
+  ![](assets/img/README/2024-12-17-21-03-35-image.png) &nbsp;  &nbsp; ![](assets/img/README/2024-12-17-21-03-58-image.png)
 
 ## Installation
 
