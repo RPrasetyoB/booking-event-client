@@ -12,7 +12,7 @@ const NavBar = () => {
     <div className="border-background flex h-12 !w-full items-center border-b bg-white/70 px-6 transition-all duration-300 ease-in-out">
       <SidebarTrigger className={`${open && !isMobile ? "hidden" : ""}`} />
       <p className="mx-auto self-center text-sm font-semibold capitalize">
-        {openMobile ? "" : "booking event date app"}
+        {openMobile ? "" : "Event Booking app"}
       </p>
       {!isMobile && (
         <div className="flex h-full items-center self-end">
