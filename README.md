@@ -69,4 +69,5 @@ To set up the project locally, follow these steps:
 5. Start the app:
    ```bash
    npm start
-   ```                   
+   ```
+6. Client will running on "https://localhost:5173"      
