@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "turbo vite.build",
+    "start": "turbo vite.build && vite dev",
     "dev": "vite dev",
     "dev-live": "turbo vite.dev",
     "lint": "tsc",
