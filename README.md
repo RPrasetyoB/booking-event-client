@@ -1,50 +1,74 @@
-# React Template（⚡️）
+# Event bookind date
 
-⚡️ A minimal React Vite starter template.
+## Overview
 
-## Feature
+The Event Booking System is a web application designed to facilitate event scheduling between HR personnel and Vendors. The application allows HR users to propose dates for events, which Vendors can then accept or reject. Built with modern technologies, this project leverages React, Zod for validation, Shadcn UI for user interface components, and Tailwind CSS for styling.
 
-- ⚡️ Fast - Build tools based on vite.
-- 👻 Small - Based on the smallest runnable build.
-- 💄 Prettier - Integrated Prettier to help you format the code.
-- ✅ Safety - Https is enabled by default.
-- 😎 Reliable - Integrated eslint and commitlint.
-- 🤖 Intelligent - Integrated renovate to help you maintain the dependent version.
+## Technologies Used
 
-## Preview
+- **React**: A JavaScript library for building user interfaces.
+- **Zod**: A TypeScript-first schema declaration and validation library.
+- **Shadcn UI**: A component library for building user interfaces quickly and efficiently.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
 
-[![qekup8.png](https://s1.ax1x.com/2022/03/20/qekup8.png)](https://imgtu.com/i/qekup8)
+## User Roles
 
-## Getting Started
+### 1. HR User
+
+- **Functionality**:
+  - Propose event dates to Vendors.
+  - View the status of proposals (accepted, rejected, pending).
+
+### 2. Vendor User
+
+- **Functionality**:
+  
+  - View proposed event dates from HR.
+  - Accept or reject event proposals.
+  - Provide feedback on proposals.
+
+## Features
+
+- **Event Proposal Creation**: HR users can create event proposals with specific dates and details.
+- **Proposal Management**: HR can view and manage the status of their proposals.
+- **Vendor Response**: Vendors can accept or reject proposals, providing feedback as necessary.
+- **Responsive Design**: The application is fully responsive, ensuring usability across devices.
+
+### Web appearance
+
+- **Desktop**
+  
+  ![](assets/img/README/2024-12-17-21-03-03-image.png)
+- **Mobile**
+  
+  ![](assets/img/README/2024-12-17-21-03-35-image.png)![](assets/img/README/2024-12-17-21-03-58-image.png)
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+   
+   ```bash
+   git clone https://github.com/RPrasetyoB/booking-event-client.git
+   ```
+
+2. Change folder:
+   
+   ```bash
+   cd booking-event-client
+   ```
+
+3. Install dependecies:
+   
+   ```bash
+   npm install
+   ```
+
+   4. Make sure the Back end API running (booking-event-server)
+
+   5. Start the app:                   
 
 ```bash
-npx degit lzm0x219/template-vite-react myapp
-
-cd myapp
-
-git init
+npm install
 ```
-
-### Prerequisites
-
-- `npm` and `pnpm` should be installed.
-- `git` should be installed (recommended v2.4.11 or higher)
-
-### Available scripts
-
-#### `pnpm dev`
-
-Runs the app in development mode.
-Open https://localhost:5173 to view it in the browser.
-
-The page will automatically reload if you make changes to the code.
-You will see the build errors and lint warnings in the console.
-
-#### `pnpm build`
-
-Builds the app for production to the `dist` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-
-Your app is ready to be deployed.
