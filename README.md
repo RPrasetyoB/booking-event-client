@@ -70,4 +70,4 @@ To set up the project locally, follow these steps:
    ```bash
    npm start
    ```
-6. Client will running on "https://localhost:5173"      
+6. Client will running on https://localhost:5173
