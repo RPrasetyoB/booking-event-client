@@ -1,17 +1,26 @@
 import { lazy, Suspense } from "react";
 import { Outlet, type RouteObject } from "react-router-dom";
-import LoginPage from "@/pages/login";
-import Layout from "@/components/layout/sidebar/sidebar-provider";
+import Layout from "@/layouts";
 import ProtectedRoute from "@/components/layout/protected-route";
+import SpinnerWithText from "@/components/UI/spinner-text";
 
 const Index = lazy(() => import("@/pages/index"));
 const Notfound = lazy(() => import("@/pages/404"));
+const LoginPage = lazy(() => import("@/pages/login"));
+const DashboardHr = lazy(() => import("@/pages/dashboard/hr"));
+const DashboardVendor = lazy(() => import("@/pages/dashboard/vendor"));
 
 export const routes: Array<RouteObject> = [
   {
     index: true,
     element: (
-      <Suspense>
+      <Suspense
+        fallback={
+          <div className="z-20 flex h-screen w-screen items-center justify-center">
+            <SpinnerWithText text="Loading..." />
+          </div>
+        }
+      >
         <Index />
       </Suspense>
     ),
@@ -19,15 +28,27 @@ export const routes: Array<RouteObject> = [
   {
     path: "/login",
     element: (
-      <Suspense>
+      <Suspense
+        fallback={
+          <div className="z-20 flex h-screen w-screen items-center justify-center">
+            <SpinnerWithText text="Loading..." />
+          </div>
+        }
+      >
         <LoginPage />
       </Suspense>
     ),
   },
   {
-    path: "app",
+    path: "",
     element: (
-      <Suspense>
+      <Suspense
+        fallback={
+          <div className="z-20 flex h-screen w-screen items-center justify-center">
+            <SpinnerWithText text="Loading..." />
+          </div>
+        }
+      >
         <ProtectedRoute>
           <Layout>
             <Outlet />
@@ -37,18 +58,30 @@ export const routes: Array<RouteObject> = [
     ),
     children: [
       {
-        path: "dashboard",
+        path: "/hr/dashboard",
         element: (
-          <Suspense>
-            <Dashboard />
+          <Suspense
+            fallback={
+              <div className="z-20 flex h-screen w-screen items-center justify-center">
+                <SpinnerWithText text="Loading..." />
+              </div>
+            }
+          >
+            <DashboardHr />
           </Suspense>
         ),
       },
       {
-        path: "settings", // Accessible as `/settings`
+        path: "/vendor/dashboard",
         element: (
-          <Suspense>
-            <Settings />
+          <Suspense
+            fallback={
+              <div className="z-20 flex h-screen w-screen items-center justify-center">
+                <SpinnerWithText text="Loading..." />
+              </div>
+            }
+          >
+            <DashboardVendor />
           </Suspense>
         ),
       },
@@ -57,7 +90,13 @@ export const routes: Array<RouteObject> = [
   {
     path: "*",
     element: (
-      <Suspense>
+      <Suspense
+        fallback={
+          <div className="z-20 flex h-screen w-screen items-center justify-center">
+            <SpinnerWithText text="Loading..." />
+          </div>
+        }
+      >
         <Notfound />
       </Suspense>
     ),

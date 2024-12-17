@@ -1,17 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
+    --background: #ebebeb;
+    --foreground: #074799;
+    --card: #f8fafc;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --primary: #000041;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
+    --secondary: #767596;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -27,8 +35,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
-  ;
+    --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -36,7 +43,8 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%}
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -61,8 +69,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
-  ;
+    --chart-5: 340 75% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -70,13 +77,77 @@
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%}
-}
-@layer base {
-  * {
-    @apply border-border;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  body {
-    @apply bg-background text-foreground;
+}
+
+@layer components {
+  .form-input,
+  .form-textarea,
+  .form-select,
+  .form-multiselect {
+    @apply w-full rounded-md border border-white bg-white px-4 py-2 text-sm font-semibold text-black !outline-none focus:border-primary focus:ring-transparent dark:focus:border-primary;
+    &:disabled {
+      @apply cursor-not-allowed bg-gray-100;
+    }
+  }
+
+  .has-error .form-input,
+  .has-error .form-textarea,
+  .has-error .form-select,
+  .has-error .form-multiselect,
+  .has-error .multiselect__tags {
+    @apply border-red-600 bg-red-500 text-red-600 placeholder-red-500 focus:border-red-600;
+  }
+  .has-error .form-label,
+  .has-error .form-help,
+  .has-error .form-icon,
+  .has-error .multiselect__placeholder {
+    @apply text-red-500;
+  }
+  .has-error .multiselect__input {
+    @apply bg-[#F7ECF0] !placeholder-red-500;
+  }
+  .has-error .multiselect__tags:hover,
+  .has-error .form-checkbox {
+    @apply border-red-500;
+  }
+
+  .has-success .form-input,
+  .has-success .form-textarea,
+  .has-success .form-select,
+  .has-success .form-multiselect,
+  .has-success .multiselect__tags {
+    @apply border-green-500 bg-green-500 text-green-500 placeholder-green-400 focus:border-green-500;
+  }
+  .has-success .form-label,
+  .has-success .form-help,
+  .has-success .form-icon,
+  .has-success .multiselect__placeholder {
+    @apply text-green-500;
+  }
+  .has-success .multiselect__input {
+    @apply bg-[#F7ECF0] !placeholder-green-400;
+  }
+  .has-success .multiselect__tags:hover {
+    @apply border-green-500;
+  }
+
+  .btn {
+    @apply relative flex items-center justify-center rounded-md border px-2 py-1 pb-0.5 text-xs font-semibold outline-none transition duration-300 active:scale-95;
+
+    &:disabled {
+      @apply scale-100 cursor-not-allowed bg-gray-500 opacity-90 hover:bg-gray-500;
+    }
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .text-foreground {
+    color: var(--primary);
   }
 }
